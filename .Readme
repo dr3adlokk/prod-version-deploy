@@ -1,0 +1,38 @@
+//In order to utilize the remote mongoDB you need to create an account at https://www.mlab.com
+// then 
+//step 1 create a new app
+//step 2 add a user through the mlab interface and copy the link it gives you
+        //should look something like this mongodb://<dbuser>:<dbpassword>@ds163330.mlab.com:63330/project3-remote
+//step 3 insert the username and password you created into the link so it looks something like this
+        //for example purposes say you set the username as 'dude' and the  password to 'dude6023' your link would need to look like the one below...
+        /*                  mongodb://dude:dude6023@ds163330.mlab.com:63330/project3-remote
+   
+
+    const db = require('./config/keys').mongoURI;
+    // Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+} else {
+    // connect to mongoDB through a local host 
+    //  MAKE SURE TO CREATE A DB and put the DB NAME below 
+            // example:  mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/myDB")
+       
+
+    // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/")
+   app.get('/', (req, res) => {
+       res.send({
+           200: "route is working..."
+       });
+   });
+}
+
+// app.get('/', (req,res)=> {
+//     res.send({200: "route is working..."});
+// });
+const PORT = process.env.PORT || 3001
+app.listen(PORT);
+
+
